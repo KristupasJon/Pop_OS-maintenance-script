@@ -25,7 +25,7 @@ Bash script to perform full system maintenance on **Pop!_OS**, including:
 `pop-os-maintain.sh`
 
 ## NOTE
-Don't run as `sudo`. The script will promp you to ask for sudo. If you do, flatpak will run as sudo and there may be file permission issues. By design always run flatpak without `sudo`.
+Don't run the script as `sudo pop-os-maintain.sh`. If you do, flatpak will run as sudo and there may be file permission issues. By design always run flatpak without `sudo`.
 
 ---
 ## TODO
