@@ -45,14 +45,15 @@ fi
 echo -e "${G}Pop-OS: Update the Recovery partition${N}"
 
 while true; do
-  read -p "Do you want to run 'pop-upgrade recovery upgrade from-release'? (y/n): " choice
+  echo -e "Do you want to install or upgrade the recovery partition ${R}(~3GB)${N}? (y/n): "
+  read choice
   
   if [[ "$choice" == "y" || "$choice" == "Y" ]]; then
     echo -e "${G}Running recovery upgrade...${N}"
     pop-upgrade recovery upgrade from-release
     break
   elif [[ "$choice" == "n" || "$choice" == "N" ]]; then
-    echo -e "${G}Skipped recovery upgrade.${N}"
+    echo -e "${R}Skipped recovery upgrade.${N}"
     break
   else
     echo -e "${R}Invalid input. Please enter y or n.${N}"

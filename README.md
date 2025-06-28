@@ -1,6 +1,6 @@
 # Pop!_OS Maintenance Script
 
-A simple Bash script to perform full system maintenance on **Pop!_OS**, including:
+Bash script to perform full system maintenance on **Pop!_OS**, including:
 
 - Repair of broken or missing packages
 - APT clean/update/full-upgrade (as recommended by System76)
@@ -9,20 +9,12 @@ A simple Bash script to perform full system maintenance on **Pop!_OS**, includin
 - Optional installation or upgrade of the recovery partition
 
 ---
-
-## Sources
-
-- [System76: Package Manager Issues](https://support.system76.com/articles/package-manager-pop/)
-- [System76: Upgrade Pop!_OS. When Should I Upgrade?](https://support.system76.com/articles/upgrade-pop/)
-
----
-## Install
+## How to Install?
 
 1. **Clone or download**:<br/>
 `curl -O https://raw.githubusercontent.com/KristupasJon/Pop_OS-maintenance-script/main/pop-os-maintain.sh`<br/>
 `chmod +x pop-os-maintain.sh`<br/>
 2. **Run**:<br/>
-`cd {PATH}`<br/>
 `./pop-os-maintain.sh`<br/>
 3. **(Optional) Add script to PATH to run from anywhere**:<br/>
 `git clone https://github.com/KristupasJon/Pop_OS-maintenance-script`<br/>
@@ -31,3 +23,18 @@ A simple Bash script to perform full system maintenance on **Pop!_OS**, includin
 `./install.sh`<br/>
 **Usage**:<br/>
 `pop-os-maintain.sh`
+
+## NOTE
+Don't run as `sudo`. The script will promp you to ask for sudo. If you do, flatpak will run as sudo and there may be file permission issues. By design always run flatpak without `sudo`.
+
+---
+## TODO
+
+- [ ] Add Nvidia driver update support to keep graphics drivers up-to-date
+
+---
+
+## Sources
+
+- [System76: Package Manager Issues](https://support.system76.com/articles/package-manager-pop/)
+- [System76: Upgrade Pop!_OS. When Should I Upgrade?](https://support.system76.com/articles/upgrade-pop/)
