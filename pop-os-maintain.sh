@@ -1,4 +1,5 @@
 #!/usr/bin/env bash
+
 set -euo pipefail
 
 # colors
@@ -33,10 +34,10 @@ fi
 
 echo -e "${G}Flatpak: repairing, updating & cleanup${N}"
 if command -v flatpak >/dev/null; then
-  run flatpak repair --user
   run flatpak update
-  run flatpak upgrade
   run flatpak uninstall --unused --delete-data
+  run flatpak repair --user
+  run flatpak upgrade
 else
   echo -e "${R}Skipping Flatpak (not found)${N}"
 fi

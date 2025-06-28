@@ -14,14 +14,18 @@ A simple Bash script to perform full system maintenance on **Pop!_OS**, includin
 - [System76 Support: Package Manager Issues](https://support.system76.com/articles/package-manager-pop/)
 
 ---
-## Usage
+## Install
 
 1. **Clone or download**:<br/>
-`curl -O https://raw.githubusercontent.com/KristupasJon/Pop_OS-maintenance-script/main/popos-maintenance.sh`<br/>
-`chmod +x popos-maintenance.sh`
+`curl -O https://raw.githubusercontent.com/KristupasJon/Pop_OS-maintenance-script/main/pop-os-maintain.sh`<br/>
+`chmod +x pop-os-maintain.sh`<br/>
 2. **Run**:<br/>
-`cd {Path to script}`<br/>
-`./popos-maintenance.sh`
+`cd {PATH}`<br/>
+`./pop-os-maintain.sh`<br/>
 3. **(Optional) Add script to PATH to run from anywhere**:<br/>
-`sudo mv popos-maintenance.sh /usr/local/bin/`<br/>
-`sudo chmod +x /usr/local/bin/popos-maintenance.sh`
+`git clone https://github.com/KristupasJon/Pop_OS-maintenance-script`<br/>
+**Run**:<br/>
+`chmod +x install.sh`<br/>
+`./install.sh`<br/>
+**Usage**:<br/>
+`pop-os-maintain.sh`
