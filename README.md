@@ -2,16 +2,18 @@
 
 A simple Bash script to perform full system maintenance on **Pop!_OS**, including:
 
+- Repair of broken or missing packages
 - APT clean/update/full-upgrade (as recommended by System76)
 - Flatpak update and cleanup
 - Snap refresh
-- Basic repair of broken or missing packages
+- Optional installation or upgrade of the recovery partition
 
 ---
 
 ## Sources
 
-- [System76 Support: Package Manager Issues](https://support.system76.com/articles/package-manager-pop/)
+- [System76: Package Manager Issues](https://support.system76.com/articles/package-manager-pop/)
+- [System76: Upgrade Pop!_OS. When Should I Upgrade?](https://support.system76.com/articles/upgrade-pop/)
 
 ---
 ## Install

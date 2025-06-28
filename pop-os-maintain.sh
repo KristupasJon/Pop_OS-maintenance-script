@@ -18,7 +18,7 @@ sudo -v
 echo -e "${G}Starting maintenance${N}"
 echo -e "${G}APT: Full maintenance according to System76${N}"
 run sudo apt clean
-run sudo apt update
+run sudo apt update -m
 run sudo dpkg --configure -a
 run sudo apt install -f
 run sudo apt full-upgrade
@@ -41,6 +41,23 @@ if command -v flatpak >/dev/null; then
 else
   echo -e "${R}Skipping Flatpak (not found)${N}"
 fi
+
+echo -e "${G}Pop-OS: Update the Recovery partition${N}"
+
+while true; do
+  read -p "Do you want to run 'pop-upgrade recovery upgrade from-release'? (y/n): " choice
+  
+  if [[ "$choice" == "y" || "$choice" == "Y" ]]; then
+    echo -e "${G}Running recovery upgrade...${N}"
+    pop-upgrade recovery upgrade from-release
+    break
+  elif [[ "$choice" == "n" || "$choice" == "N" ]]; then
+    echo -e "${G}Skipped recovery upgrade.${N}"
+    break
+  else
+    echo -e "${R}Invalid input. Please enter y or n.${N}"
+  fi
+done
 
 echo -e "${G}Maintenance completed${N}"
 
