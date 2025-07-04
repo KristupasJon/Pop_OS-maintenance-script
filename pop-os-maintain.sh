@@ -1,6 +1,7 @@
 #!/usr/bin/env bash
 
-set -euo pipefail
+set -u
+set -o pipefail
 
 # colors
 Y='\033[1;33m'  # yellow
@@ -13,7 +14,32 @@ run() {
   "$@"
 }
 
+if command -v system76-power >/dev/null; then
+  current_gpu_mode=$(system76-power graphics)
+  if [[ "$current_gpu_mode" == "integrated" ]]; then
+    echo -e "${R}WARNING:${R} You are currently using ${Y}integrated graphics mode${N}."
+    echo -e "${R}Removal of unneeded packages may remove NVIDIA drivers.${N}"
+    echo -e "${R}Consider switching to hybrid or dedicated mode before proceeding.${N}"
+    echo
+  fi
+fi
+
+echo -e "${G}Pop!_OS Maintenance Script by KristupasJon${N}"
+echo -e "${G}This script performs system maintenance tasks on Pop!_OS${N}"
+echo -e "${G}It will update the system, clean up packages, and manage Snap and Flatpak applications.${N}"
+echo -e "${G}Please ensure you have a backup of your important data before proceeding.${N}"
+echo -e "${G}This script requires sudo privileges to perform system updates and maintenance.${N}"
+echo -e "${Y}Run this script as normal user (no root) and grant sudo when requested.${N}"
+echo -e "${G}Press Ctrl+C to cancel or any key to continue...${N}"
+read -r -n 1 -s
+echo -e "\n"
+
 sudo -v
+
+if [[ $? -ne 0 ]]; then
+  echo -e "${R}You need to grant sudo privileges after running pop-os-maintain as normal user.${N}"
+  exit 1
+fi
 
 echo -e "${G}Starting maintenance${N}"
 echo -e "${G}APT: Full maintenance according to System76${N}"
