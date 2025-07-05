@@ -24,10 +24,9 @@ if command -v system76-power >/dev/null; then
   fi
 fi
 
-echo -e "${G}Pop!_OS Maintenance Script by KristupasJon${N}"
+echo -e "${G}Pop!_OS Maintenance Script by Kristupas${N}"
 echo -e "${G}This script performs system maintenance tasks on Pop!_OS${N}"
 echo -e "${G}It will update the system, clean up packages, and manage Snap and Flatpak applications.${N}"
-echo -e "${G}Please ensure you have a backup of your important data before proceeding.${N}"
 echo -e "${G}This script requires sudo privileges to perform system updates and maintenance.${N}"
 echo -e "${Y}Run this script as normal user (no root) and grant sudo when requested.${N}"
 echo -e "${G}Press Ctrl+C to cancel or any key to continue...${N}"
