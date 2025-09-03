@@ -47,7 +47,6 @@ run sudo apt update -m
 run sudo dpkg --configure -a
 run sudo apt install -f
 run sudo apt full-upgrade
-run sudo pop‑upgrade release upgrade
 run sudo apt autoremove --purge
 run sudo apt autoclean
 
